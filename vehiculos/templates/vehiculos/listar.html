@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Vehículos</title>
+</head>
+<body>
+    <h1>Vehículos en el taller</h1>
+    <a href="{% url 'agregar_vehiculo' %}">Agregar nuevo vehículo</a>
+    <ul>
+        {% for v in vehiculos %}
+            <li>
+                {{ v.marca }} {{ v.modelo }} ({{ v.patente }}) - Estado: {{ v.get_estado_display }} - Mecánico: {{ v.mecanico }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
