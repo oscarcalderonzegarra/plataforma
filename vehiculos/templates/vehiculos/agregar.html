@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Agregar Vehículo</title>
-</head>
-<body>
-    <h1>Agregar Vehículo</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar</button>
-    </form>
-    <a href="{% url 'lista_vehiculos' %}">Volver a la lista</a>
-</body>
-</html>
+{% extends 'vehiculos/base.html' %}
+{% block title %}Agregar Vehículo{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Registrar Nuevo Vehículo</h2>
+<form method="post">
+  {% csrf_token %}
+  <!-- Aquí irá tu formulario Django -->
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

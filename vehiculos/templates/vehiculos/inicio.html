@@ -1,11 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Página de inicio</title>
-</head>
-<body>
-  <h1>¡Bienvenido a Mecánica Especializada!</h1>
-  <p>Estamos listos para ayudarte con tus reparaciones y repuestos.</p>
-</body>
-</html>
+{% extends 'vehiculos/base.html' %}
+{% block title %}Inicio — Mecánica Especializada{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="card text-center shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Listado de Vehículos</h5>
+        <p class="card-text">Consulta todos los vehículos registrados.</p>
+        <a href="{% url 'vehiculos:lista_vehiculos' %}" class="btn btn-primary">Ver listado</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Seguimiento</h5>
+        <p class="card-text">Visualiza el estado de los proyectos.</p>
+        <a href="{% url 'vehiculos:seguimiento' %}" class="btn btn-success">Ir al tablero</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title">Agregar Vehículo</h5>
+        <p class="card-text">Registra un nuevo vehículo en la plataforma.</p>
+        <a href="{% url 'vehiculos:agregar' %}" class="btn btn-warning">Agregar</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

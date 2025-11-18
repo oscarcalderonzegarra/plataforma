@@ -1,17 +1,8 @@
-"""
-URL configuration for plataforma_mecanicos project.
-"""
-
+# plataforma_mecanicos/urls.py
 from django.contrib import admin
-
-from django.urls import path
-from vehiculos import views 
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-urlpatterns = [
-    path('', views.inicio, name='inicio'),
-
+    path('', include('vehiculos.urls', namespace='vehiculos')),  # ← esto activa el namespace
 ]

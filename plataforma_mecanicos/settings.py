@@ -69,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'vehiculos' / 'static']
 
 WSGI_APPLICATION = 'plataforma_mecanicos.wsgi.application'
 
