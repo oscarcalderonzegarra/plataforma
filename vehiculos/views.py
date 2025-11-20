@@ -14,6 +14,7 @@ def seguimiento(request):
     return render(request, 'vehiculos/seguimiento.html')
 
 def agregar_vehiculo(request):
+
     if request.method == 'POST':
         form = VehiculoForm(request.POST)
         if form.is_valid():
@@ -22,3 +23,4 @@ def agregar_vehiculo(request):
     else:
         form = VehiculoForm()
     return render(request, 'vehiculos/agregar.html', {'form': form})
+
