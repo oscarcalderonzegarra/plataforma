@@ -2,10 +2,26 @@
 {% block title %}Agregar Vehículo{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">Registrar Nuevo Vehículo</h2>
-<form method="post">
-  {% csrf_token %}
-  <!-- Aquí irá tu formulario Django -->
-  <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h2 class="mb-4">Registrar Nuevo Vehículo</h2>
+    <form method="post">   <!--metodo post para el formulario-->
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="marca" class="form-label">Marca</label>
+        <input type="text" name="marca" id="marca" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="modelo" class="form-label">Modelo</label>
+        <input type="text" name="modelo" id="modelo" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="anio" class="form-label">Año</label>
+        <input type="number" name="anio" id="anio" class="form-control" min="1990" max="2025" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+      <a href="{% url 'vehiculos:lista_vehiculos' %}" class="btn btn-secondary ms-2">Cancelar</a>
+    </form>
+  </div>
+</div>
 {% endblock %}
