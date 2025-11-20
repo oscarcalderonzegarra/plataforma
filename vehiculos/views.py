@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect
 from .models import Vehiculo #HAY QUE IMPORTAR LOS MODELOS PARA PODER USARLOS
 from .forms import VehiculoForm
 
-def inicio(request):
+def inicio(request): #REVISANDO AKI NO CAMBIAR
     return render(request, 'vehiculos/inicio.html')
 
 
-def lista_vehiculos(request): #REVISANDO Q ONDA
+def lista_vehiculos(request): 
     vehiculos = Vehiculo.objects.all()
     return render(request, 'vehiculos/listar.html', {'vehiculos': vehiculos})
 

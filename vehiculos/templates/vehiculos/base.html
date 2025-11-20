@@ -14,9 +14,9 @@
 </head>
 
 <body>
-<nav class="navbar navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-custom mb-4"> <!--Esto afecta el css-->
   <div class="container">
-    <a class="navbar-brand" href="{% url 'vehiculos:lista_vehiculos' %}">Mecánica Especializada</a>
+    <a class="navbar-brand" href="{% url 'vehiculos:inicio' %}">Mecánica Especializada</a>
     <ul class="navbar-nav flex-row gap-3">
       <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:lista_vehiculos' %}">Registrados</a></li>
       <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:seguimiento' %}">Seguimiento</a></li>
