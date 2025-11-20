@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Vehiculo #HAY QUE IMPORTAR LOS MODELOS PARA PODER USARLOS
 from .forms import VehiculoForm
+from django.shortcuts import render, redirect, get_object_or_404
 
 def inicio(request):
     return render(request, 'vehiculos/inicio.html')
@@ -23,4 +24,7 @@ def agregar_vehiculo(request):
     else:
         form = VehiculoForm()
     return render(request, 'vehiculos/agregar.html', {'form': form})
+def detalle_vehiculo(request, id):
+    vehiculo = get_object_or_404(Vehiculo, pk=id)
+    return render(request, 'vehiculos/detalle.html', {'vehiculo': vehiculo})
 
