@@ -1,19 +1,14 @@
 {% extends 'vehiculos/base.html' %}
-<<<<<<< HEAD
+
 {% block title %}Inicio - Mecánica Especializada{% endblock %}
 
-=======
-{% block title %}Inicio{% endblock %}
->>>>>>> 50c2439d8dd9169ba6252e8dbe4b2f2a26a39076
 {% block content %}
   <div class="text-center mb-5">
     <h1 class="display-5">Bienvenido a Mecánica Especializada</h1>
-    <p class="lead">Gestiona vehículos y seguimientos con eficiencia y estilo.</p>
-    <a href="{% url 'vehiculos:agregar' %}" class="btn btn-primary btn-lg">
-      <i class="bi bi-plus-circle"></i> Agregar Vehículo
-    </a>
+    <p class="lead">Gestiona tus vehículos con seguimiento eficiente y con estilo.</p>
+    <a href="{% url 'vehiculos:agregar_vehiculo' %}" class="btn btn-primary btn-lg">
+      <i class="bi bi-plus-circle"></i> Agregar Vehículo </a>
   </div>
-
   <div class="row">
     {% for vehiculo in vehiculos %}
       <div class="col-md-4 mb-4">
