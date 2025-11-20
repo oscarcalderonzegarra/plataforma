@@ -20,4 +20,4 @@ def inicio(request):
     return render(request, 'vehiculos/inicio.html')
 
 def agregar_vehiculo(request):
-    return render(request, 'vehiculos/agregar.html')
+    return render(request, 'vehiculos/agregar.html')                                            

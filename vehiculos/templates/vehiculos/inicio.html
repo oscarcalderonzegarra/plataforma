@@ -1,34 +1,27 @@
 {% extends 'vehiculos/base.html' %}
-{% block title %}Inicio — Mecánica Especializada{% endblock %}
-
+{% block title %}Inicio{% endblock %}
 {% block content %}
-<div class="row g-4">
-  <div class="col-md-4">
-    <div class="card text-center shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">Listado de Vehículos</h5>
-        <p class="card-text">Consulta todos los vehículos registrados.</p>
-        <a href="{% url 'vehiculos:lista_vehiculos' %}" class="btn btn-primary">Ver listado</a>
-      </div>
-    </div>
+  <div class="text-center mb-5">
+    <h1 class="display-5">Bienvenido a Mecánica Especializada</h1>
+    <p class="lead">Gestiona vehículos y seguimientos con eficiencia y estilo.</p>
+    <a href="{% url 'vehiculos:agregar' %}" class="btn btn-primary btn-lg">
+      <i class="bi bi-plus-circle"></i> Agregar Vehículo
+    </a>
   </div>
-  <div class="col-md-4">
-    <div class="card text-center shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">Seguimiento</h5>
-        <p class="card-text">Visualiza el estado de los proyectos.</p>
-        <a href="{% url 'vehiculos:seguimiento' %}" class="btn btn-success">Ir al tablero</a>
+
+  <div class="row">
+    {% for vehiculo in vehiculos %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ vehiculo.marca }} {{ vehiculo.modelo }}</h5>
+            <p class="card-text">Patente: {{ vehiculo.patente }}</p>
+            <a href="{% url 'vehiculos:detalle' vehiculo.id %}" class="btn btn-outline-primary btn-sm">
+              Ver detalles <i class="bi bi-search"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    {% endfor %}
   </div>
-  <div class="col-md-4">
-    <div class="card text-center shadow-sm">
-      <div class="card-body">
-        <h5 class="card-title">Agregar Vehículo</h5>
-        <p class="card-text">Registra un nuevo vehículo en la plataforma.</p>
-        <a href="{% url 'vehiculos:agregar' %}" class="btn btn-warning">Agregar</a>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}
