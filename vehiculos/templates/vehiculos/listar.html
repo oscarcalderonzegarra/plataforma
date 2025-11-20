@@ -1,0 +1,17 @@
+{% extends 'vehiculos/base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Vehículos Registrados</h2>
+<p>Aquí aparecerán los vehículos cargados en la base de datos.</p>
+
+<h2>Lista de Vehículos</h2>
+<ul>
+{% for v in vehiculos %}
+    <li>{{ v.marca }} - {{ v.modelo }}</li>
+{% empty %}
+    <li>No hay vehículos registrados</li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Mecánica Especializada{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel= "stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- NO QUITAR POR AHORA ESTOY PROBANDO-->
+  <link rel= "stylesheet" href="{% static 'css/app.css' %}">
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'vehiculos:lista_vehiculos' %}">Mecánica Especializada</a>
+    <ul class="navbar-nav flex-row gap-3">
+      <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:lista_vehiculos' %}">Registrados</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:seguimiento' %}">Seguimiento</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'vehiculos:agregar_vehiculo' %}">Agregar Vehículo</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <main class="container"> <!-- espacio reservado en ese canva para las wawi paginas-->
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="text-center">
+    Plataforma Mecánicos — {% now "Y" %}
+  </footer>
+
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+  </html>

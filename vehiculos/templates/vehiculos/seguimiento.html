@@ -1,0 +1,27 @@
+
+{% extends 'vehiculos/base.html' %}
+{% block title %}Seguimiento de Proyectos{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Tablero de Seguimiento</h2>
+
+{% for equipo, proyectos in portfolio.items %}
+  <h4 class="mt-4">{{ equipo }}</h4>
+  <div class="row g-3">
+    {% for proyecto in proyectos %}
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ proyecto.nombre }}</h5>
+            <span class="badge bg-{{ proyecto.status|lower|cut:" " }}">{{ proyecto.status }}</span>
+            <p class="mb-1">Semana: {{ proyecto.semana }}</p>
+            <p class="mb-1">Desviación: {{ proyecto.desviacion }}</p>
+            <p class="mb-1">Entrega: {{ proyecto.entrega }}</p>
+            <p class="mb-1">Prioridad: {{ proyecto.prioridad }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+{% endblock %}

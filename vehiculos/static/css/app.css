@@ -1,0 +1,24 @@
+body {
+  background-color: #fefefe !important;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+footer {
+  background-color: #eee;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
